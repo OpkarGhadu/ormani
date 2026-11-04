@@ -1,8 +1,11 @@
 import process from 'node:process';
 import path from 'node:path';
 
-export function main(): string {
-  return "Hello World";
+const filename = process.argv[2] || "";
+const extension = path.extname(filename);
+
+function main(): string {
+  return(`Filename: ${filename}, Extension: ${extension}\n`);
 }
 
 console.log(main());
